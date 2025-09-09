@@ -1,10 +1,6 @@
 import CSS from "csstype";
 
-interface TaskTitleProps {
-  title: string;
-}
-
-export default function TaskTitle({ title }: TaskTitleProps) {
+export default function TaskTitle({ title }: { title: string }) {
   return <h1 style={h1Styles}>{title}</h1>;
 }
 

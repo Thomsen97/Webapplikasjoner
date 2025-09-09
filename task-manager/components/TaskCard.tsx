@@ -1,32 +1,17 @@
 import TaskTitle from "./TaskTitle";
 import TaskItem from "./TaskItem";
-import CSS from "csstype";
+import type { Task } from "../src/types";
 
-export default function TaskCard() {
+export default function TaskCard({ task }: { task: Task }) {
+  const { title } = task;
+
+  const onActionInTaskItem = (task: Task, time: number) => {
+    console.log(task.id, time);
+  };
   return (
-    <div style={cardStyles}>
-      <section>
-        <TaskTitle title="Task 1" />
-        <TaskItem item="This is the description for task 1." />
-        <button>Finish task</button>
-      </section>
-      <section>
-        <TaskTitle title="Task 2" />
-        <TaskItem item="This is the description for task 2." />
-        <button>Finish task</button>
-      </section>
-      <section>
-        <TaskTitle title="Task 3" />
-        <TaskItem item="This is the description for task 3." />
-        <button>Finish task</button>
-      </section>
-      <section>
-        <TaskTitle title="Task 4" />
-        <TaskItem item="This is the description for task 4." />
-        <button>Finish task</button>
-      </section>
-    </div>
+    <section>
+      <TaskTitle title={title} />
+      <TaskItem task={task} onAction={onActionInTaskItem} />
+    </section>
   );
 }
-
-const cardStyles: CSS.Properties = {};

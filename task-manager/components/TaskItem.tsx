@@ -1,11 +1,23 @@
 import CSS from "csstype";
+import type { Task } from "../src/types";
 
-interface TaskItemProps {
-  item: string;
-}
-
-export default function TaskItem({ item }: TaskItemProps) {
-  return <h2 style={h2Styles}>{item}</h2>;
+export default function TaskItem({
+  task,
+  onAction,
+}: {
+  task: Task;
+  onAction: (task: Task, time: number) => void;
+}) {
+  const onTaskClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("Clicked", e);
+    onAction(task, new Date().getMilliseconds());
+  };
+  return (
+    <section>
+      <h2 style={h2Styles}>Task Item</h2>
+      <button onClick={onTaskClick}>Task logger button</button>
+    </section>
+  );
 }
 
 const h2Styles: CSS.Properties = {
