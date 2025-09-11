@@ -1,4 +1,6 @@
 import TaskCard from "../components/TaskCard";
+import TaskList from "../components/TaskList";
+import type { Task } from "./types";
 
 const task = {
   id: "123",
@@ -7,10 +9,37 @@ const task = {
   dueDate: new Date(),
 };
 
+const tasks: Task[] = [
+  {
+    id: "1",
+    title: "Vaske",
+    description: "Gulv",
+    dueDate: new Date(),
+  },
+  {
+    id: "2",
+    title: "Danse",
+    description: "Tango",
+    dueDate: new Date(),
+  },
+  {
+    id: "3",
+    title: "Hoppe",
+    description: "Høyt",
+    dueDate: new Date(),
+  },
+  {
+    id: "4",
+    title: "Løpe",
+    description: "Fort",
+    dueDate: new Date(),
+  },
+];
+
 function App() {
   return (
     <main>
-      <TaskCard task={task} />
+      <TaskList tasks={tasks} />
     </main>
   );
 }

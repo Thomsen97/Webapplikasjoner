@@ -9,7 +9,7 @@ export default function TaskCard({ task }: { task: Task }) {
     console.log(task.id, time);
   };
   return (
-    <section>
+    <section className="task">
       <TaskTitle title={title} />
       <TaskItem task={task} onAction={onActionInTaskItem} />
     </section>

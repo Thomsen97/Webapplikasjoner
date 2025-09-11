@@ -14,7 +14,7 @@ export default function TaskItem({
   };
   return (
     <section>
-      <h2 style={h2Styles}>Task Item</h2>
+      <h2 style={h2Styles}>{task.description}</h2>
       <button onClick={onTaskClick}>Task logger button</button>
     </section>
   );
