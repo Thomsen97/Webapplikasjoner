@@ -1,13 +1,15 @@
-import TaskCard from "../components/TaskCard";
+import TaskFooter from "../components/TaskFooter";
 import TaskList from "../components/TaskList";
 import type { Task } from "./types";
 
+/*
 const task = {
   id: "123",
   title: "My Title Works",
   description: "My description",
   dueDate: new Date(),
 };
+*/
 
 const tasks: Task[] = [
   {
@@ -39,7 +41,9 @@ const tasks: Task[] = [
 function App() {
   return (
     <main>
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks}>
+        <TaskFooter />
+      </TaskList>
     </main>
   );
 }
